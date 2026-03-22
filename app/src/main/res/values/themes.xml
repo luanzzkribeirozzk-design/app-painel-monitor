@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.Painel" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">#00ccff</item>
+        <item name="colorPrimaryVariant">#0d0d1a</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="android:statusBarColor">#0d0d1a</item>
+        <item name="android:windowBackground">#0d0d1a</item>
+    </style>
+</resources>
