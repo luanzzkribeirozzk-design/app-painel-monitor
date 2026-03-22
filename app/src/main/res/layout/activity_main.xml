@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0d0d1a"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <!-- Header -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LN PAINEL"
+            android:textColor="#00ccff"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:paddingTop="12dp"
+            android:paddingBottom="4dp"
+            android:fontFamily="monospace" />
+
+        <TextView
+            android:id="@+id/tvStatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Aguardando..."
+            android:textColor="#888888"
+            android:textSize="13sp"
+            android:gravity="center"
+            android:paddingBottom="16dp" />
+
+        <!-- Sem dados -->
+        <TextView
+            android:id="@+id/tvSemDados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Nenhum dispositivo conectado ainda.\nAbra o App Client no outro celular."
+            android:textColor="#666666"
+            android:textSize="14sp"
+            android:gravity="center"
+            android:padding="32dp"
+            android:visibility="gone" />
+
+        <!-- Container dados -->
+        <LinearLayout
+            android:id="@+id/containerDados"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <!-- Card Status -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#131326"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="DISPOSITIVO"
+                        android:textColor="#00ccff"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.15"
+                        android:paddingBottom="10dp" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Modelo" android:textColor="#666666" android:textSize="12sp" />
+                        <TextView android:id="@+id/tvModelo" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:text="—" android:textColor="#ffffff" android:textSize="12sp" android:gravity="end" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Bateria" android:textColor="#666666" android:textSize="12sp" />
+                        <TextView android:id="@+id/tvBateria" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:text="—" android:textColor="#00ff88" android:textSize="12sp" android:gravity="end" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Último sinal" android:textColor="#666666" android:textSize="12sp" />
+                        <TextView android:id="@+id/tvUltVisto" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:text="—" android:textColor="#aaaaaa" android:textSize="12sp" android:gravity="end" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Localização -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#131326"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📍 LOCALIZAÇÃO"
+                        android:textColor="#00ccff"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.15"
+                        android:paddingBottom="10dp" />
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Latitude" android:textColor="#666666" android:textSize="12sp" />
+                        <TextView android:id="@+id/tvLat" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:text="—" android:textColor="#ffffff" android:textSize="12sp" android:gravity="end" android:fontFamily="monospace" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Longitude" android:textColor="#666666" android:textSize="12sp" />
+                        <TextView android:id="@+id/tvLng" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:text="—" android:textColor="#ffffff" android:textSize="12sp" android:gravity="end" android:fontFamily="monospace" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="6dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Precisão" android:textColor="#666666" android:textSize="12sp" />
+                        <TextView android:id="@+id/tvPrecisao" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:text="—" android:textColor="#ffcc00" android:textSize="12sp" android:gravity="end" />
+                    </LinearLayout>
+
+                    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:paddingBottom="12dp">
+                        <TextView android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:text="Velocidade" android:textColor="#666666" android:textSize="12sp" />
+                        <TextView android:id="@+id/tvVelocidade" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="2" android:text="—" android:textColor="#aaaaaa" android:textSize="12sp" android:gravity="end" />
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btnMapa"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:text="🗺 VER NO MAPA"
+                        android:textColor="#00ccff"
+                        android:backgroundTint="#1a2a3a"
+                        android:textSize="12sp" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card Câmera -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="12dp"
+                app:cardBackgroundColor="#131326"
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="📷 CÂMERA"
+                        android:textColor="#00ccff"
+                        android:textSize="10sp"
+                        android:letterSpacing="0.15"
+                        android:paddingBottom="12dp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/imgFrontal"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            android:scaleType="centerCrop"
+                            android:background="#0a0a1a"
+                            android:visibility="gone" />
+
+                        <ImageView
+                            android:id="@+id/imgTraseira"
+                            android:layout_width="0dp"
+                            android:layout_height="120dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:scaleType="centerCrop"
+                            android:background="#0a0a1a"
+                            android:visibility="gone" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="2">
+
+                        <Button
+                            android:id="@+id/btnFrontal"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:layout_marginEnd="6dp"
+                            android:text="Frontal"
+                            android:textColor="#00ccff"
+                            android:backgroundTint="#1a2a3a"
+                            android:textSize="12sp" />
+
+                        <Button
+                            android:id="@+id/btnTraseira"
+                            android:layout_width="0dp"
+                            android:layout_height="44dp"
+                            android:layout_weight="1"
+                            android:layout_marginStart="6dp"
+                            android:text="Traseira"
+                            android:textColor="#00ccff"
+                            android:backgroundTint="#1a2a3a"
+                            android:textSize="12sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
